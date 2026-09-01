@@ -1,4 +1,4 @@
-name: Build Sample YAML
+name: Build Begonia Kernel
 
 on:
   workflow_call:
