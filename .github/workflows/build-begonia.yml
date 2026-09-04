@@ -1,4 +1,4 @@
-name: Build Begonia Kernel
+name: Build Begonia Kernel (ReSukiSU)
 
 on:
   workflow_call:
@@ -35,7 +35,7 @@ env:
   KERNELSU_AUTO_GET : "true" # if u want easy setting kernelsu, u can true.
   KERNELSU_AUTO_FORK : "resukisu" # magic, rsuntk, next, resukisu and sukisu
 
-  SUSFS_ENABLE : true
+  SUSFS_ENABLE : false
   SUSFS_FIXED : true
 
   AK3_SOURCE : "https://github.com/osm0sis/AnyKernel3.git"
@@ -46,7 +46,7 @@ env:
   NEED_DTBO : false
   NEED_SAFE_DTBO : false
 
-  ROM_TEXT : "rom_android"
+  ROM_TEXT : "stock_a12"
 
   # Other env
   PYTHON_VERSION: "3" # Only 2(Ubuntu 22.04 and Ubuntu 20.04) or 3(Any OS Versions).
@@ -60,7 +60,7 @@ env:
   PATCHES_BRANCH: "mi_kernel" # [your_branch] -> main
 
   SUSFS_FOLDER_FIXED: "note8pro_miui" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
-  SUSFS_PATCH_FIXED: "cmdline_fixed" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
+  SUSFS_PATCH_FIXED: "fix_cmdline_susfs,fix_fdinfo_susfs,fix_task_mmu_susfs" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
 
   REKERNEL_ENABLE: "false" # if u need Re:Kernel.
   DROIDSPACES_ENABLE: "false" # if u need Droidspaces or LXC/Docker.
