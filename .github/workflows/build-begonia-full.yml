@@ -1,4 +1,4 @@
-name: Build Begonia ReSukiSU+SUSFS Kernel
+name: Build Begonia Kernel (ReSukiSU+SUSFS)
 
 on:
   workflow_call:
