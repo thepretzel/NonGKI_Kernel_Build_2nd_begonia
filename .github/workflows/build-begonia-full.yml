@@ -1,4 +1,4 @@
-name: Build Begonia Test Kernel
+name: Build Begonia ReSukiSU+SUSFS Kernel
 
 on:
   workflow_call:
