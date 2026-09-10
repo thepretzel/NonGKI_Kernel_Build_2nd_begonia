@@ -8,15 +8,17 @@ on:
   workflow_call:
 
 jobs:
-  # OPPO
-  ## Oneplus
-  build-device-name-systemos-android-version:
-    name: "Device Name (SystemOS Android Version) (Kernel Name)"
+  build-begonia-a11-resukisu-susfs:
+    name: "Redmi Note 8 Pro (Begonia) Android 11 ReSukiSU+SuSFS"
     strategy:
       fail-fast: true
-    uses: ./.github/workflows/build-sample.yml
+    uses: ./.github/workflows/build-begonia-full.yml
     secrets: inherit
 
-  # Xiaomi
+  build-begonia-a11-resukisu:
+    name: "Redmi Note 8 Pro (Begonia) Android 11 ReSukiSU"
+    strategy:
+      fail-fast: true
+    uses: ./.github/workflows/build-begonia.yml
+    secrets: inherit
 
-  ## Redmi
