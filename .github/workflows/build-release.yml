@@ -19,12 +19,12 @@ on:
         type: boolean
         default: true
 
-  # schedule:
-    # - cron: '0 3 * * 3'
+  schedule:
+    - cron: '0 3 * * 3'
 
 jobs:
   build-kernel:
-    name: "Step Build Kernel"
+    name: "Step: Build Kernel"
     uses: ./.github/workflows/build-kernel.yml
     secrets: inherit
     strategy:
@@ -32,17 +32,19 @@ jobs:
     if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.build-kernel == true)
 
   release-kernel:
-    name: "Step Release Kernel"
+    name: "Step: Release Kernel"
     runs-on: ubuntu-latest
     needs:
       - build-kernel
     if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.build-kernel == true)
     env:
-      REPO_OWNER: JackA1ltman
-      REPO_NAME: NonGKI_Kernel_Build
+      REPO_OWNER: thepretzel
+      REPO_NAME: NonGKI_Kernel_Build_2nd_begonia
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       RELEASE_NAME: "Pre-built"
       RELEASE_NOTES: |
+        sorry i am too lazy to change this table but kernel names should make it obvious enough. i tried them on stock rom a11.
+        
         Below is the codename reference table. Please select the image or archive you need based on this table.
 
         | Device Name | Codename | Kernel | System | Android | Method | KernelSU | SuSFS | Re:Kernel | BBG | NoMount |
